@@ -1,0 +1,3 @@
+https://www.worldweatheronline.com/developer/api/docs/local-city-town-weather-api.aspx#qparameter
+
+http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=Moscow&format=json&num_of_days=7
