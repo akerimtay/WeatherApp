@@ -4,9 +4,117 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherApp.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" WindowStyle="None">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="720" Width="725" WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="materialDesign:Card">
+            <Setter Property="Height" Value="200" />
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Background" Value="WhiteSmoke" />
+            <Setter Property="Foreground" Value="#1e88e5"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical" Background="#1e88e5">
+        <Grid Height="45" VerticalAlignment="Top" Background="WhiteSmoke">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" Click="WindowClosing">
+                    <materialDesign:PackIcon Kind="Power"/>
+                </Button>
+            </StackPanel>
+            <TextBlock Text="Weather Online" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#1e88e5" FontSize="23" FontWeight="Bold"/>
+        </Grid>
+        <Grid Height="50" Margin="0 10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 0">
+                <TextBox Name="cityNameTextBox" Height="50" Width="300" FontSize="30" Text=" Enter city name" Foreground="#1e88e5" PreviewMouseLeftButtonDown="ClearTextBox"></TextBox>
+            </StackPanel>
+            <Button Name="findCityButton" Background="WhiteSmoke" Foreground="#1e88e5" HorizontalAlignment="Right" Margin="10 0" Height="40" Width="150" FontSize="20" Click="SearchButtonClick">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="8" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </Button.Effect>
+                <Button.Content>Search</Button.Content>
+            </Button>
+        </Grid>
+        <Grid Height="40">
+            <TextBlock Name="cityNameTextBlock" Text="City: " HorizontalAlignment="Left" Margin="10 0" Height="40" Width="auto" Foreground="WhiteSmoke" FontSize="25">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="8" Direction="310" Color="Maroon" Opacity="0.45" BlurRadius="10" />
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Canvas Height="480">
+            <materialDesign:Card Canvas.Left="25" Canvas.Top="20">
+                <materialDesign:Card.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </materialDesign:Card.Effect>
+                <ListBox Name="firstList">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="Today" HorizontalAlignment="Center" Foreground="#1e88e5" FontSize="18"/>
+                                <!--<Image Source="http://cdn.worldweatheronline.net/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png" Height="45" Margin="5"/>
+                                <TextBlock Text="Min temp: " HorizontalAlignment="Left" Margin="10 0" Foreground="#1e88e5" FontSize="15"/>
+                                <TextBlock Text="Max temp: " HorizontalAlignment="Left" Margin="10 0" Foreground="#1e88e5" FontSize="15"/>
+                                <TextBlock Text="Wind speed: " HorizontalAlignment="Left" Margin="10 0" Foreground="#1e88e5" FontSize="15"/>
+                                <TextBlock Text="Humidity: " HorizontalAlignment="Left" Margin="10 0" Foreground="#1e88e5" FontSize="15"/>
+                                <TextBlock Text="Visibility: " HorizontalAlignment="Left" Margin="10 0" Foreground="#1e88e5" FontSize="15"/>
+                                <TextBlock Text="Feels like: " HorizontalAlignment="Left" Margin="10 0" Foreground="#1e88e5" FontSize="15"/>-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </materialDesign:Card>
+            
+            <materialDesign:Card Canvas.Left="200" Canvas.Top="20">
+                <materialDesign:Card.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </materialDesign:Card.Effect>
+            </materialDesign:Card>
+            <materialDesign:Card Canvas.Left="375" Canvas.Top="20">
+                <materialDesign:Card.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </materialDesign:Card.Effect>
+            </materialDesign:Card>
+            <materialDesign:Card Canvas.Left="550" Canvas.Top="20">
+                <materialDesign:Card.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </materialDesign:Card.Effect>
+            </materialDesign:Card>
+
+            <materialDesign:Card Canvas.Left="25" Canvas.Top="250">
+                <materialDesign:Card.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </materialDesign:Card.Effect>
+            </materialDesign:Card>
+            <materialDesign:Card Canvas.Left="200" Canvas.Top="250">
+                <materialDesign:Card.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </materialDesign:Card.Effect>
+            </materialDesign:Card>
+            <materialDesign:Card Canvas.Left="375" Canvas.Top="250">
+                <materialDesign:Card.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="10" />
+                </materialDesign:Card.Effect>
+            </materialDesign:Card>
+        </Canvas>
+        <Grid Height="auto">
+            <StackPanel>
+                <TextBlock Text="Created by @askar_kerimtay" HorizontalAlignment="Center" Foreground="White" FontSize="25">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="8" Direction="310" Color="Maroon" Opacity="0.45" BlurRadius="10" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock Text="Все права защищены." HorizontalAlignment="Center" Foreground="White" FontSize="25">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="8" Direction="310" Color="Maroon" Opacity="0.45" BlurRadius="10" />
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
 </Window>

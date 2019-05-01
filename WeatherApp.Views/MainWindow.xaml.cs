@@ -30,7 +30,22 @@ namespace WeatherApp.Views
 
             string json = downloader.DownloadRawJsonData("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7");
             var data = JsonConvert.DeserializeObject<Feature>(json);
-            
+            //string a = "";
+        }
+
+        private void WindowClosing(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void ClearTextBox(object sender, MouseButtonEventArgs e)
+        {
+            cityNameTextBox.Text = "";
+        }
+
+        private void SearchButtonClick(object sender, RoutedEventArgs e)
+        {
+            firstCard.
         }
     }
 }

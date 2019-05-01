@@ -22,3 +22,8 @@ C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\obj\Debug\Weath
 C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\obj\Debug\WeatherApp.Views.csproj.CopyComplete
 C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\obj\Debug\WeatherApp.Views.exe
 C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\obj\Debug\WeatherApp.Views.pdb
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\bin\Debug\MaterialDesignColors.dll
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Views\bin\Debug\MaterialDesignThemes.Wpf.xml
