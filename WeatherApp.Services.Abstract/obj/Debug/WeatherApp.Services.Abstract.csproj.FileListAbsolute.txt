@@ -1,0 +1,6 @@
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Services.Abstract\bin\Debug\WeatherApp.Services.Abstract.dll
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Services.Abstract\bin\Debug\WeatherApp.Services.Abstract.pdb
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Services.Abstract\obj\Debug\WeatherApp.Services.Abstract.csprojAssemblyReference.cache
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Services.Abstract\obj\Debug\WeatherApp.Services.Abstract.csproj.CoreCompileInputs.cache
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Services.Abstract\obj\Debug\WeatherApp.Services.Abstract.dll
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.Services.Abstract\obj\Debug\WeatherApp.Services.Abstract.pdb
