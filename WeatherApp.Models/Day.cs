@@ -10,9 +10,6 @@ namespace WeatherApp.Models
         [JsonProperty("mintemp_c")]
         public double MinTemp { get; set; }
         
-        [JsonProperty("avgtemp_c")]
-        public double AvengerTemp { get; set; }
-        
         [JsonProperty("maxwind_kph")]
         public double MaxWindSpeed { get; set; }
         

@@ -28,10 +28,26 @@ namespace WeatherApp.Views
             ILogger logger = new FileLogger();
             IDownloader downloader = new Downloader(logger);
 
-            string json = downloader.DownloadRawJsonData("http://api.apixu.com/v1/forecast.json?key=041385abb58343f9a69145540190505&q=Astana&days=7");
+            string json = downloader.DownloadRawJsonData("https://api.apixu.com/v1/forecast.json?key=041385abb58343f9a69145540190505&q=astana&days=7");
             var feature = JsonConvert.DeserializeObject<Feature>(json);
 
-            string a = "";
+            List<CardViewModel> cards = new List<CardViewModel>();
+
+            var card = new CardViewModel
+            {
+                Date = feature.Forecast.ForecastDays[0].Date,
+                MaxTemp = feature.Forecast.ForecastDays[0].Day.MaxTemp,
+                MinTemp = feature.Forecast.ForecastDays[0].Day.MinTemp,
+                MaxWindSpeed = feature.Forecast.ForecastDays[0].Day.MaxWindSpeed,
+                AvengerHumidity = feature.Forecast.ForecastDays[0].Day.AvengerHumidity,
+                AvengerVisiblity = feature.Forecast.ForecastDays[0].Day.AvengerVisiblity,
+                Icon = feature.Forecast.ForecastDays[0].Day.Condition.Icon,
+                Text = feature.Forecast.ForecastDays[0].Day.Condition.Text
+            };
+
+            cityNameTextBlock.Text += feature.Location.Name + ", " + feature.Location.Country;
+
+            //string a = "";
         }
 
         private void WindowClosing(object sender, RoutedEventArgs e)

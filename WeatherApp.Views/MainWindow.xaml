@@ -4,27 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
-        Title="MainWindow" Height="720" Width="725" WindowStyle="None" ResizeMode="NoResize" mc:Ignorable="d" >
-    
+        xmlns:local="clr-namespace:WeatherApp.Models;assembly=WeatherApp.Models"
+        Title="MainWindow" Height="720" Width="1000" WindowStyle="None" ResizeMode="NoResize" mc:Ignorable="d" >
+
     <!--Resources-->
     <Window.Resources>
         <DropShadowEffect  ShadowDepth="5" Direction="310" Color="Maroon" Opacity="0.35" BlurRadius="5" x:Key="Shadow"/>
-        
+
         <Style TargetType="materialDesign:Card">
-            <Setter Property="Height" Value="200" />
-            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="230" />
+            <Setter Property="Width" Value="180" />
+            <Setter Property="Margin" Value="0 10 0 0"/>
             <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Foreground" Value="#1e88e5"/>
+            <Setter Property="Effect" Value="{StaticResource Shadow}"/>
         </Style>
-        
+
         <Style TargetType="TextBox">
             <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
     </Window.Resources>
-    
+
     <StackPanel Orientation="Vertical" Background="#1e88e5">
         <Grid Height="45" VerticalAlignment="Top" Background="WhiteSmoke">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
@@ -37,7 +39,7 @@
 
         <Grid Height="50" Margin="0 10" Effect="{StaticResource Shadow}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 0">
-                <TextBox Name="cityNameTextBox" Height="50" Width="300" FontSize="30" Text=" Enter city name" Foreground="#1e88e5" PreviewMouseLeftButtonDown="ClearTextBox"></TextBox>
+                <TextBox Name="cityNameTextBox" Height="50" Width="300" FontSize="30" Text=" Enter city name" Foreground="#1e88e5" PreviewMouseLeftButtonDown="ClearTextBox" ToolTip="Click to enter the city name"></TextBox>
             </StackPanel>
 
             <Button Name="findCityButton" Background="WhiteSmoke" Foreground="#1e88e5" Content="Search" HorizontalAlignment="Right" Margin="10 0"
@@ -48,65 +50,39 @@
             <TextBlock Name="cityNameTextBlock" Text="City: " HorizontalAlignment="Left" Margin="10 0" Height="40" Width="auto" 
                        Foreground="WhiteSmoke" FontSize="25"/>
         </Grid>
-        
+
         <!--Cards-->
-        <Canvas Height="480" Effect="{StaticResource Shadow}">
-            <materialDesign:Card Canvas.Left="25" Canvas.Top="20">
-                <ListBox Name="firstList">
-                    
-                </ListBox>
+        <Grid Height="500">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+
+            <materialDesign:Card Grid.Column="1" Grid.Row="0">
+                
             </materialDesign:Card>
 
-            <materialDesign:Card Canvas.Left="200" Canvas.Top="20">
-                <ListBox Name="secondList" ItemsSource="{DynamicResource ResourceKey=weather}">
-                    <ListBox.Resources>
-                        <col:ArrayList x:Key="weather"></col:ArrayList>
-                    </ListBox.Resources>
-                </ListBox>
-            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="2" Grid.Row="0"/>
 
-            <materialDesign:Card Canvas.Left="375" Canvas.Top="20">
-                <ListBox Name="thirdList" ItemsSource="{DynamicResource ResourceKey=weather}">
-                    <ListBox.Resources>
-                        <col:ArrayList x:Key="weather"></col:ArrayList>
-                    </ListBox.Resources>
-                </ListBox>
-            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="3" Grid.Row="0"/>
 
-            <materialDesign:Card Canvas.Left="550" Canvas.Top="20">
-                <ListBox Name="fourthList" ItemsSource="{DynamicResource ResourceKey=weather}">
-                    <ListBox.Resources>
-                        <col:ArrayList x:Key="weather"></col:ArrayList>
-                    </ListBox.Resources>
-                </ListBox>
-            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="4" Grid.Row="0"/>
 
-            <materialDesign:Card Canvas.Left="25" Canvas.Top="250">
-                <ListBox Name="fifthList" ItemsSource="{DynamicResource ResourceKey=weather}">
-                    <ListBox.Resources>
-                        <col:ArrayList x:Key="weather"></col:ArrayList>
-                    </ListBox.Resources>
-                </ListBox>
-            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="1" Grid.Row="1"/>
 
-            <materialDesign:Card Canvas.Left="200" Canvas.Top="250">
-                <ListBox Name="sixthList" ItemsSource="{DynamicResource ResourceKey=weather}">
-                    <ListBox.Resources>
-                        <col:ArrayList x:Key="weather"></col:ArrayList>
-                    </ListBox.Resources>
-                </ListBox>
-            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="2" Grid.Row="1"/>
 
-            <materialDesign:Card Canvas.Left="375" Canvas.Top="250">
-                <ListBox Name="seventhList" ItemsSource="{DynamicResource ResourceKey=weather}">
-                    <ListBox.Resources>
-                        <col:ArrayList x:Key="weather"></col:ArrayList>
-                    </ListBox.Resources>
-                </ListBox>
-            </materialDesign:Card>
-        </Canvas>
+            <materialDesign:Card Grid.Column="3" Grid.Row="1"/>
+        </Grid>
 
-        <Grid Height="auto" Effect="{StaticResource Shadow}">
+        <Grid Height="80" Effect="{StaticResource Shadow}">
             <StackPanel>
                 <TextBlock Text="Created by @askar_kerimtay" HorizontalAlignment="Center" Foreground="White" FontSize="25"/>
                 <TextBlock Text="Все права защищены." HorizontalAlignment="Center" Foreground="White" FontSize="25"/>
