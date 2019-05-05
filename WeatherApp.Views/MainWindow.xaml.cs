@@ -28,9 +28,10 @@ namespace WeatherApp.Views
             ILogger logger = new FileLogger();
             IDownloader downloader = new Downloader(logger);
 
-            string json = downloader.DownloadRawJsonData("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7");
-            var data = JsonConvert.DeserializeObject<Feature>(json);
-            //string a = "";
+            string json = downloader.DownloadRawJsonData("http://api.apixu.com/v1/forecast.json?key=041385abb58343f9a69145540190505&q=Astana&days=7");
+            var feature = JsonConvert.DeserializeObject<Feature>(json);
+
+            string a = "";
         }
 
         private void WindowClosing(object sender, RoutedEventArgs e)
@@ -45,7 +46,7 @@ namespace WeatherApp.Views
 
         private void SearchButtonClick(object sender, RoutedEventArgs e)
         {
-            firstCard.
+            
         }
     }
 }

@@ -1,15 +1,16 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WeatherApp.Models
 {
     public class Feature
     {
-        [JsonProperty("data")]
-        public Data Data { get; set; }
+        [JsonProperty("location")]
+        public Location Location { get; set; }
+
+        [JsonProperty("current")]
+        public Current Current { get; set; }
+
+        [JsonProperty("forecast")]
+        public Forecast Forecast { get; set; }
     }
 }

@@ -5,3 +5,7 @@
 01.05.2019 22:21:35 - Запрос http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7
 01.05.2019 22:21:49 - Запрос http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7
 01.05.2019 22:46:32 - Запрос http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7
+05.05.2019 20:23:23 - Запрос http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7
+05.05.2019 20:29:57 - Запрос http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7
+05.05.2019 20:30:11 - Запрос http://api.worldweatheronline.com/premium/v1/weather.ashx?key=63f4f19fa98343e58e950508193004&q=New+York&format=json&num_of_days=7
+05.05.2019 21:22:48 - Запрос http://api.apixu.com/v1/forecast.json?key=041385abb58343f9a69145540190505&q=Astana&days=7
