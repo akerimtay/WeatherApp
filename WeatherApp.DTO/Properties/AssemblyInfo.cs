@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("WeatherApp.Services")]
+[assembly: AssemblyTitle("WeatherApp.DTO")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WeatherApp.Services")]
+[assembly: AssemblyProduct("WeatherApp.DTO")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("7428a38f-7ebb-4c5f-b379-4edbbc9ceba7")]
+[assembly: Guid("f2b36ed6-dfd3-499a-815b-712bdad0d9bf")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

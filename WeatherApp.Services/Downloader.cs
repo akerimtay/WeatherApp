@@ -1,30 +1,24 @@
-﻿using System.Net;
-using WeatherApp.Services.Abstract;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace WeatherApp.Services
 {
-    public class Downloader : IDownloader
+    public class Downloader
     {
-        private readonly ILogger logger;
-
-        public Downloader(ILogger logger)
-        {
-            this.logger = logger;
-        }
-
-        public string DownloadRawJsonData(string url)
+        public async Task<string> DownloadRawJsonDataAsync(string url)
         {
             using (var client = new WebClient())
             {
+                client.Encoding = System.Text.Encoding.UTF8;
+
                 try
                 {
-                    logger.LogMessage($"Запрос {url}");
-                    return client.DownloadString(url);
+                    return await client.DownloadStringTaskAsync(url);
                 }
-                catch (WebException exception)
+                catch (Exception exception)
                 {
-                    logger.LogError(exception);
-                    return "";
+                    throw exception;
                 }
             }
         }

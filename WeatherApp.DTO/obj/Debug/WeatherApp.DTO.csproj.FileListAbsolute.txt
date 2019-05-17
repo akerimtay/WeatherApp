@@ -1,0 +1,9 @@
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\bin\Debug\WeatherApp.DTO.dll
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\bin\Debug\WeatherApp.DTO.pdb
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\obj\Debug\WeatherApp.DTO.csprojAssemblyReference.cache
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\obj\Debug\WeatherApp.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\obj\Debug\WeatherApp.DTO.csproj.CopyComplete
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\obj\Debug\WeatherApp.DTO.dll
+C:\Users\Askar Kerimtay\source\repos\WeatherApp\WeatherApp.DTO\obj\Debug\WeatherApp.DTO.pdb
