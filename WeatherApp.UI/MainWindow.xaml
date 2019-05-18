@@ -225,7 +225,7 @@
         <Grid Grid.Row="3" Height="auto" Effect="{StaticResource Shadow}">
             <StackPanel>
                 <TextBlock Text="Created by @askar_kerimtay" HorizontalAlignment="Center" FontSize="13"/>
-                <TextBlock Text="Все права защищены." HorizontalAlignment="Center" FontSize="13"/>
+                <TextBlock Text="Copyright © 2019" HorizontalAlignment="Center" FontSize="13"/>
             </StackPanel>
         </Grid>
     </Grid>
