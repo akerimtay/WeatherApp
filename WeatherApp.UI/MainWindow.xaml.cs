@@ -20,11 +20,11 @@ namespace WeatherApp.UI
         
         private async Task SearchCityAsync(string city)
         {
-            Downloader downloader = new Downloader();
-            string json = "";
-
             city = city.Trim();
             city = city.Replace(" ", "+");
+
+            var downloader = new Downloader();
+            string json = "";
 
             try
             {
@@ -39,16 +39,50 @@ namespace WeatherApp.UI
             _features = JsonConvert.DeserializeObject<Feature>(json);
 
             cityNameTextBlock.Text = $"City: {_features.Location.Name}, {_features.Location.Country}";
-            lastUpdatedDateTextBlock.Text = $"Last updated: {_features.Location.LocalTime.ToLongTimeString()}";
+            localTimeTextBlock.Text = $"Local time: {_features.Location.LocalTime.ToLongTimeString()}";
 
-            //Fill Cards
+            FillCards();
+        }
+
+        private async void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            await SearchCityAsync("Astana");
+        }
+        
+        private async void SearchCityButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchCityTextBox.Text))
+            {
+                MessageBox.Show("Please, enter a city name!");
+                return;
+            }
+
+            await SearchCityAsync(searchCityTextBox.Text);
+        }
+
+        private async void SearchCityKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                if (string.IsNullOrWhiteSpace(searchCityTextBox.Text))
+                {
+                    MessageBox.Show("Please, enter a city name!");
+                    return;
+                }
+                
+                await SearchCityAsync(searchCityTextBox.Text);
+            }
+        }
+
+        private void FillCards()
+        {
             for (int i = 0; i < _features.Forecast.ForecastDays.Count; i++)
             {
                 var header = $"{_features.Forecast.ForecastDays[i].Date.DayOfWeek}, " +
                     $"{_features.Forecast.ForecastDays[i].Date.Day}.{_features.Forecast.ForecastDays[i].Date.Month}.{_features.Forecast.ForecastDays[i].Date.Year}";
 
                 var conditionText = _features.Forecast.ForecastDays[i].Day.Condition.Text;
-                var image = GetBitMapOfImage(_features.Forecast.ForecastDays[i].Day.Condition.Icon.Insert(0, "http:"));
+                var image = new BitmapImage(new Uri(_features.Forecast.ForecastDays[i].Day.Condition.Icon.Insert(0, "http:")));
 
                 var featuresText = $"{_features.Forecast.ForecastDays[i].Day.MaxTemp} 'C " +
                                     $"\n{_features.Forecast.ForecastDays[i].Day.MinTemp} 'C " +
@@ -101,47 +135,6 @@ namespace WeatherApp.UI
                         seventhDayFeature.Text = featuresText;
                         break;
                 }
-            }
-        }
-
-        private async void WindowLoaded(object sender, RoutedEventArgs e)
-        {
-            await SearchCityAsync("Astana");
-        }
-
-        public BitmapImage GetBitMapOfImage(string url)
-        {
-            BitmapImage bitmap = new BitmapImage();
-
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(url);
-            bitmap.EndInit();
-
-            return bitmap;
-        }
-
-        private void SearchCityButtonClick(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(searchCityTextBox.Text))
-            {
-                MessageBox.Show("Please, enter a city name!");
-                return;
-            }
-
-            SearchCityAsync(searchCityTextBox.Text);
-        }
-
-        private void SearchCityKeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.Key == Key.Enter)
-            {
-                if (string.IsNullOrWhiteSpace(searchCityTextBox.Text))
-                {
-                    MessageBox.Show("Please, enter a city name!");
-                    return;
-                }
-
-                SearchCityAsync(searchCityTextBox.Text);
             }
         }
     }
